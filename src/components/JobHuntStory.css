@@ -35,8 +35,7 @@
 .job-hunt-message > svg { position: absolute; bottom: 27px; right: 21px; opacity: .65; }
 .job-hunt-connection { display: flex; gap: 6px; justify-content: center; align-items: center; margin-top: 15px; font-size: 11px; color: #6e91b7; }
 .job-hunt-connection > svg { flex: none; }
-.job-hunt-visual figcaption { color: #56708f; font-size: 15px; text-align: center; margin-top: 2px; }
-.job-hunt-visual figcaption > span { display: block; color: #a3aebb; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 9px; margin-top: 9px; }
+.job-hunt-visual figcaption { color: #56708f; font-size: 15px; line-height: 1.5; text-align: center; margin-top: 2px; }
 @media (max-width: 800px) {
   .job-hunt-story { padding: 44px 28px 45px; gap: 32px; }
   .job-hunt-message { font-size: 19px; padding: 21px 38px 21px 18px; }

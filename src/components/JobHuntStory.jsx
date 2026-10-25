@@ -4,6 +4,7 @@ import { ArrowUpRight, Check, FileText, MessageCircle, RefreshCw, Sparkles } fro
 import './JobHuntStory.css';
 
 const ease = [.22, 1, .36, 1];
+const extraApplicationHold = 2;
 const applications = [
   { title: 'Application sent', detail: 'Cover letter_final_FINAL.pdf', icon: FileText, x: -21, y: -64, rotate: -8 },
   { title: 'Refreshing…', detail: 'Maybe this time.', icon: RefreshCw, x: 14, y: 0, rotate: 5 },
@@ -33,11 +34,11 @@ export default function JobHuntStory() {
 
     <figure className="job-hunt-visual" ref={visualRef} aria-label="Illustration: unanswered applications give way to a conversation with a founder after a mutual match.">
       <div className="job-hunt-scene" aria-hidden="true">
-        <motion.div className="job-hunt-glow" initial={false} animate={{ opacity: active ? 1 : 0, scale: active ? 1 : .8 }} transition={{ duration: reduced ? 0 : 1, delay: reduced ? 0 : 1.5, ease }}/>
+        <motion.div className="job-hunt-glow" initial={false} animate={{ opacity: active ? 1 : 0, scale: active ? 1 : .8 }} transition={{ duration: reduced ? 0 : 1, delay: reduced ? 0 : 1.5 + extraApplicationHold, ease }}/>
         {applications.map(({ title, detail, icon: Icon, x, y, rotate }, index) => <motion.div key={title} className="job-hunt-application"
           initial={false}
           animate={reduced ? { opacity: 0 } : active ? { x: [x, x + 4, 100], y: [y, y - 3, y - 25], rotate: [rotate, rotate, rotate + 8], scale: [1, 1, .88], opacity: [1, 1, 0], filter: ['blur(0px)', 'blur(0px)', 'blur(5px)'] } : { x, y, rotate, opacity: 1 }}
-          transition={{ duration: reduced ? 0 : 2, times: [0, .67, 1], delay: reduced ? 0 : index * .1, ease }}>
+          transition={{ duration: reduced ? 0 : 2, times: [0, .67, 1], delay: reduced ? 0 : extraApplicationHold + index * .1, ease }}>
           <span className="job-hunt-file-icon"><Icon size={21} strokeWidth={1.6}/></span>
           <span><strong>{title}</strong><small>{detail}</small></span>
           <i/>
@@ -45,13 +46,13 @@ export default function JobHuntStory() {
         <motion.div className="job-hunt-conversation"
           initial={reduced ? false : { opacity: 0, y: 28, scale: .9 }}
           animate={active ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 28, scale: .9 }}
-          transition={{ type: 'spring', stiffness: 240, damping: 25, delay: reduced ? 0 : 1.95, ...(reduced ? { duration: 0 } : {}) }}>
+          transition={{ type: 'spring', stiffness: 240, damping: 25, delay: reduced ? 0 : 1.95 + extraApplicationHold, ...(reduced ? { duration: 0 } : {}) }}>
           <div className="job-hunt-person"><img src="/assets/profiles/maya.jpg" alt="" loading="lazy"/><span><strong>Maya</strong><small>Co-founder at Orbit</small></span><span className="job-hunt-mutual"><Check size={12}/> Mutual match</span></div>
           <div className="job-hunt-message">hey, let’s talk about<br/>what we could build.<ArrowUpRight size={21}/></div>
           <span className="job-hunt-connection"><Sparkles size={13}/> It starts with something in common.</span>
         </motion.div>
       </div>
-      <figcaption>Fewer barriers to a first hello.<span>Illustrative demo</span></figcaption>
+      <figcaption>Fewer barriers to a first hello.<br/>Less larping on LinkedIn.</figcaption>
     </figure>
   </section>;
 }

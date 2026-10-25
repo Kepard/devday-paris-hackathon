@@ -134,13 +134,12 @@ export default function SwipeDemo({ selectedInterests, onMatch, onActivity, onPr
   }}>
     <AppStatusBar/>
     <AppHeader>
-      {view === 'deck' && <button type="button" className="fe-back" aria-label="Undo last swipe" disabled={!history.length || locked} onClick={() => { setHistory(h => h.slice(0, -1)); onActivity?.(); onSound?.('tap'); }}><RotateCcw size={19}/></button>}
       <button type="button" className="fe-reset" aria-label="Restart swipe demo" onClick={reset}><RotateCcw size={16}/></button>
     </AppHeader>
     <AnimatePresence mode="wait">
       {view === 'deck' && <motion.div className="app-view swipe-deck-view" key="deck" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: .18 }}>
         <div className="fe-discovery">
-          <DiscoveryHeading current={history.length + 1} total={profiles.length}/>
+          <DiscoveryHeading showCount={false}/>
         <div className="deck-stage fe-card-space">
           {remaining.length ? <AnimatePresence custom={direction} initial={false}>
             {remaining.slice(0, 1).map(p => <ProfileCard key={p.id} profile={p} selectedInterests={selectedInterests} behind={remaining.indexOf(p)} direction={direction} onDecide={decide} onInteract={onActivity} disabled={locked} onDetails={element => { if (!lockedRef.current) onProfileOpen?.(p, element); }}/>) }

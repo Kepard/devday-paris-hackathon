@@ -11,8 +11,8 @@ export function AppHeader({ children }) {
   return <div className="fe-app-header"><div className="fe-brand"><img src="/assets/app-logo.svg" alt=""/><span>find your daddy</span></div>{children}</div>;
 }
 
-export function DiscoveryHeading({ title = 'Your people.', current, total }) {
-  return <div className="fe-discovery-heading"><div><span>PERSONALITY FIRST</span><h3>{title}</h3></div><small>{Math.min(current, total)}/{total}</small></div>;
+export function DiscoveryHeading({ title = 'Your people.', current, total, showCount = true }) {
+  return <div className="fe-discovery-heading"><div><span>PERSONALITY FIRST</span><h3>{title}</h3></div>{showCount && <small>{Math.min(current, total)}/{total}</small>}</div>;
 }
 
 export function ProfileCardContent({ person, selectedInterests, facts, onDetails, detailsLabel = 'Why you two?', detailsClassName, disabled = false, behind = false }) {
