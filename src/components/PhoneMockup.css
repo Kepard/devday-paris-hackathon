@@ -1,0 +1,101 @@
+.phone-mockup {
+  --phone-fallback-scale: 0.76;
+  position: relative;
+  width: min(380px, 88vw);
+  aspect-ratio: 0.5;
+  flex: 0 0 auto;
+  isolation: isolate;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.phone-mockup__gl-layer,
+.phone-mockup__dom-layer {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.phone-mockup__gl-layer { z-index: 1; }
+.phone-mockup__dom-layer { z-index: 2; visibility: hidden; }
+
+.phone-mockup__screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  border-radius: 59px;
+  background: #fff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: 50% 50%;
+  pointer-events: auto;
+  contain: layout style;
+  text-align: left;
+}
+
+.phone-mockup__screen > * { max-width: 100%; }
+
+.phone-mockup__fallback {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 422.55px;
+  height: 881.46px;
+  box-sizing: content-box;
+  border: 1.4px solid #c4d3e5;
+  border-radius: 73.9px;
+  background: #11151d;
+  box-shadow: inset 0 0 0 3px #8799b2, inset 0 0 0 5px #252a34, 10px 16px 35px rgb(17 41 74 / 8%);
+  transform: translate(-50%, -50%) scale(var(--phone-fallback-scale));
+  transform-origin: center;
+}
+
+.phone-mockup__fallback::before,
+.phone-mockup__fallback::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #52667f, #c1d2e7);
+}
+.phone-mockup__fallback::before { right: -3px; top: 250px; height: 100px; }
+.phone-mockup__fallback::after { left: -3px; top: 236px; height: 70px; }
+
+.phone-mockup__fallback-screen {
+  position: absolute;
+  left: 14.775px;
+  top: 14.73px;
+  width: 393px;
+  height: 852px;
+}
+
+.phone-mockup[data-renderer='webgl'] .phone-mockup__fallback { visibility: hidden; }
+
+.phone-mockup__shadow {
+  position: absolute;
+  z-index: 0;
+  bottom: 3.7%;
+  left: 18%;
+  width: 64%;
+  height: 2.8%;
+  border-radius: 50%;
+  background: #17314f;
+  filter: blur(16px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .phone-mockup { width: min(360px, 92vw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-mockup, .phone-mockup * { scroll-behavior: auto; }
+}

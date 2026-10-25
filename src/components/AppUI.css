@@ -1,0 +1,100 @@
+/* One iOS visual language, shared by both interactive phones. */
+.fe-app{height:852px;width:393px;position:relative;background:#fff;display:flex;flex-direction:column;font-family:'Cal Sans',-apple-system,BlinkMacSystemFont,sans-serif;color:#1d2b3d;overflow:hidden;font-size:14px;user-select:text;-webkit-user-select:text}
+.fe-app button,.fe-app input,.fe-app select{font-family:inherit}
+.fe-app button{touch-action:manipulation}
+.fe-app button:disabled{opacity:.38}
+.fe-app button:focus-visible,.fe-app input:focus-visible,.fe-app select:focus-visible{outline:3px solid #80bfff;outline-offset:3px}
+.fe-status{height:57px;flex:none;position:relative;display:flex;align-items:center;justify-content:space-between;padding:12px 32px 0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;font-weight:650}
+.fe-status>i{position:absolute;left:calc(50% - 52px);top:12px;width:104px;height:29px;border-radius:30px;background:#07090d}
+.fe-status>div{display:flex;align-items:center;gap:5px}
+.fe-brand{display:flex;align-items:center;gap:6px;font-size:12px;color:#22344b}
+.fe-brand>img{width:23px;height:23px;border-radius:7px}
+.fe-back,.fe-reset{position:absolute;display:grid;place-items:center;color:#8c9db0;width:34px;height:34px;border-radius:50%}
+.fe-back{left:20px}
+.fe-reset{right:20px}
+.fe-back:hover,.fe-reset:hover{background:#f0f6ff;color:#007aff}
+.fe-home-indicator{position:absolute;z-index:8;bottom:9px;left:calc(50% - 62px);width:124px;height:4px;background:#171b23;border-radius:8px;pointer-events:none}
+.fe-tabbar{height:72px;flex:none;display:flex;justify-content:space-around;align-items:flex-start;padding:11px 23px 17px;border-top:1px solid #f0f3f7;background:white}
+.fe-tabbar>button{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:67px;min-height:43px;color:#bdc7d3;padding:0;font-size:9px}
+.fe-tabbar>button[aria-current='page']{color:#007aff}
+.fe-tab-icon{position:relative;height:21px}
+.fe-tab-icon>i{position:absolute;top:-4px;right:-8px;display:grid;place-items:center;min-width:12px;height:12px;padding:1px;background:#007aff;border:2px solid white;color:white;font-size:7px;font-style:normal;border-radius:50%}
+.fe-discovery{height:100%;display:flex;flex-direction:column;padding:4px 22px 12px}
+.fe-card-space{flex:1;min-height:0;position:relative}
+.fe-person{position:absolute;inset:0;border-radius:27px;background:#e9f0f8;overflow:hidden;box-shadow:0 8px 20px #25496712;cursor:grab;touch-action:pan-y}
+.fe-person:active{cursor:grabbing}
+.fe-person-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none;-webkit-user-select:none}
+.fe-person-shade{position:absolute;inset:0;background:linear-gradient(180deg,#13233616 10%,transparent 30%,#1222382e 50%,#061325ed 100%);pointer-events:none}
+.fe-person-shared{position:absolute;top:15px;left:15px;display:flex;align-items:center;gap:4px;color:#3a77ad;background:#ffffffeb;font-size:9px;border-radius:99px;padding:6px 9px}
+.fe-person-intro{position:absolute;bottom:49px;left:20px;right:19px;color:white;user-select:none;-webkit-user-select:none}
+.fe-person-intro>span{font-size:10px;color:#ffffffb5}
+.fe-person-intro h4{font-size:34px;font-weight:580;letter-spacing:-1px;line-height:1;margin:7px 0 10px}
+.fe-person-intro h4>small{font-weight:400;font-size:29px;color:#ffffffd1}
+.fe-person-intro>p{font-size:16px;letter-spacing:-.4px;line-height:1.15;max-width:260px}
+.fe-mini-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
+.fe-mini-tags>span{padding:5px 7px;border:1px solid #ffffff30;border-radius:99px;font-size:8px;color:#ffffffd9;background:#ffffff0c}
+.fe-mini-tags>span.shared{background:#ffffff24;border-color:#ffffff50}
+.fe-person-intro>button{display:flex;gap:3px;align-items:center;color:#ffffffa3;font-size:9px;margin-top:13px;padding:6px 0}
+.fe-role-strip{position:absolute;bottom:0;left:0;right:0;height:39px;padding:0 17px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#ffffffed;color:#54708f;font-size:9px;backdrop-filter:blur(10px)}
+.fe-role-strip>span+span{color:#899bb0;font-size:8px}
+.fe-swipe-controls{display:flex;justify-content:center;gap:26px;padding-top:16px;flex:none}
+.fe-swipe-controls>button{height:49px;width:49px;display:grid;place-items:center;border-radius:50%;transition:transform .2s,background .2s;box-shadow:0 3px 12px #173a6410}
+.fe-swipe-controls>button:active{transform:scale(.9)}
+.fe-pass{border:1px solid #edf1f7!important;background:#fff!important;color:#b4bdc8!important}
+.fe-like{background:#007aff!important;color:white!important;box-shadow:0 6px 15px #007aff28!important}
+.fe-swipe-note{font-size:8px;color:#a5b3c2;text-align:center;margin-top:10px}
+.fe-swipe-stamp{position:absolute;top:65px;padding:7px 10px;border:2px solid;border-radius:8px;font-size:17px;font-weight:650;letter-spacing:1px;pointer-events:none}
+.fe-stamp-like{left:24px;transform:rotate(-12deg);color:#fff;background:#007affb3}
+.fe-stamp-pass{right:20px;transform:rotate(12deg);color:#fff;background:#283e55a8}
+.fe-app{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:19px;background:#fff;color:#182437}
+.fe-app h2,.fe-app h3,.fe-app h4,.fe-app .fe-kicker,.fe-app .fe-avatar-initial,.fe-app .fe-match-you{font-family:'Cal Sans',-apple-system,BlinkMacSystemFont,sans-serif}
+.fe-app button,.fe-app input,.fe-app select{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.fe-app button{font-weight:500}
+.fe-status{font-size:16px;height:59px;padding-top:12px;color:#111827}
+.fe-status>div{gap:5px}
+.fe-status>i{top:12px}
+.fe-brand{font-size:14px;font-weight:600;letter-spacing:-.3px;gap:7px;color:#24384f}
+.fe-brand>img{width:25px;height:25px}
+.fe-back,.fe-reset{width:44px;height:44px;color:#46617f}
+.fe-back{left:18px}
+.fe-reset{right:18px}
+.fe-tabbar{height:80px;padding:10px 19px 20px;border-top:1px solid #e8edf3;background:#fdfdff;align-items:flex-start}
+.fe-tabbar>button{min-height:49px;min-width:74px;font-size:11px;gap:5px;color:#8293a8;font-weight:400}
+.fe-tabbar>button>svg,.fe-tab-icon>svg{width:23px;height:23px}
+.fe-tab-icon{height:23px}
+.fe-tab-icon>i{height:14px;min-width:14px;font-size:8px;top:-3px;right:-9px}
+.fe-discovery{padding:7px 18px 10px}
+.fe-person{border-radius:26px}
+.fe-person-shared{font-size:12px;padding:7px 10px;gap:5px;top:15px;left:15px;color:#386f9e}
+.fe-person-shared>svg{width:14px;height:14px}
+.fe-person-intro{bottom:65px;left:20px;right:20px}
+.fe-person-intro>span{font-size:13px;line-height:1.4;color:#ffffffdf}
+.fe-person-intro h4{font-size:37px;margin:8px 0 10px}
+.fe-person-intro h4>small{font-size:30px}
+.fe-person-intro>p{font-size:20px;line-height:1.2;letter-spacing:-.4px;max-width:280px;font-family:'Cal Sans',sans-serif}
+.fe-mini-tags{gap:5px;margin-top:12px}
+.fe-mini-tags>span{font-size:11px;padding:6px 8px;color:#ffffffec}
+.fe-person-intro>button{min-height:44px;padding:8px 0;margin-top:5px;font-size:14px;color:#ffffffdf}
+.fe-person-intro>button>svg{height:17px;width:17px}
+.fe-role-strip{height:51px;padding:0 16px;font-size:12px;color:#405e80;flex-direction:column;justify-content:center;align-items:flex-start;gap:3px;background:#fffffff5}
+.fe-role-strip>span+span{font-size:11px;color:#758aa3}
+.fe-swipe-controls{gap:29px;padding-top:14px}
+.fe-swipe-controls>button{height:54px;width:54px}
+.fe-swipe-note{font-size:11px;color:#71879f;margin-top:9px}
+.fe-tabbar>button{font-size:13px}
+.fe-person-intro>span{font-size:14px}
+.fe-role-strip{font-size:14px}
+.fe-role-strip>span+span{font-size:13px}
+
+.fe-app-header{height:55px;flex:none;padding:0 25px;position:relative;display:flex;align-items:center;justify-content:center}
+.fe-discovery-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px;padding:0 4px}
+.fe-discovery-heading>div>span{font-size:8px;color:#a0b0c2;letter-spacing:1.2px}
+.fe-discovery-heading h3{font-size:29px;line-height:1;letter-spacing:-.8px;font-weight:570;margin-top:7px}
+.fe-discovery-heading>small{font-size:11px;color:#9caaba;background:#f3f7fb;border-radius:11px;padding:7px 9px}
+.fe-app-header{height:55px;padding:0 31px}
+.fe-discovery-heading{padding:0 5px;margin-bottom:17px}
+.fe-discovery-heading>div>span{font-size:11px;color:#72869e;letter-spacing:1px}
+.fe-discovery-heading h3{font-size:33px;color:#1d324d;margin-top:8px}
+.fe-discovery-heading>small{font-size:13px;color:#6e849c;border-radius:12px;padding:8px 10px;background:#f0f5fa}
+.fe-role-strip{background:#f6f8fb;backdrop-filter:none;border-radius:0 0 26px 26px}
+.fe-discovery-heading h3{font-size:31px}

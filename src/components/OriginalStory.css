@@ -1,0 +1,158 @@
+.original-story {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 64px 44px 47px;
+}
+.original-story-heading {
+  margin: 0;
+  text-align: center;
+  color: #26364a;
+  font-size: clamp(34px, 4.1vw, 54px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+.original-story-heading > span { color: #007aff; }
+.original-story-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+  list-style: none;
+  padding: 0;
+  margin: 42px 0 0;
+}
+.original-story-steps > li { min-width: 0; }
+.original-story-copy { border-top: 1px solid #e8eef5; padding-top: 17px; }
+.original-story-copy h3 {
+  margin: 0 0 10px;
+  color: #26364a;
+  font-size: 25px;
+  line-height: 1.12;
+  font-weight: 570;
+  letter-spacing: -.65px;
+}
+.original-story-copy p {
+  max-width: 285px;
+  margin: 0;
+  color: #728399;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.original-story-visual {
+  display: flex;
+  align-items: center;
+  height: 69px;
+  margin-bottom: 14px;
+  color: #167ee7;
+  pointer-events: none;
+}
+.original-story-traits { gap: 6px; }
+.original-story-traits > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  border: 1px solid #dcecff;
+  border-radius: 99px;
+  background: #f2f8ff;
+  font-size: 11px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.original-story-traits > span:last-child {
+  color: #728ba5;
+  border-color: #e7edf5;
+  background: #fff;
+}
+.original-story-paper {
+  position: relative;
+  width: 48px;
+  height: 61px;
+  padding: 10px 9px;
+  margin-left: 9px;
+  border: 1px solid #dfE9f4;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 4px 13px #315e8310;
+  transform: rotate(-6deg);
+}
+.original-story-paper > i {
+  display: block;
+  height: 2px;
+  width: 23px;
+  margin-top: 6px;
+  border-radius: 2px;
+  background: #dbe8f6;
+}
+.original-story-paper > i + i { width: 15px; margin-top: 4px; }
+.original-story-paper > b {
+  position: absolute;
+  right: -8px;
+  bottom: 5px;
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: #fff;
+  background: #007aff;
+}
+.original-story-chat {
+  width: 110px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+}
+.original-story-chat > span {
+  padding: 7px 12px;
+  border-radius: 12px 12px 12px 4px;
+  background: #edf2f7;
+  color: #77879b;
+  font-size: 11px;
+  line-height: 1;
+}
+.original-story-chat > span + span {
+  align-self: flex-end;
+  border-radius: 12px 12px 4px 12px;
+  background: #007aff;
+  color: white;
+}
+@media (max-width: 800px) {
+  .original-story { padding: 54px 28px 33px; }
+  .original-story-steps { gap: 23px; margin-top: 32px; }
+  .original-story-copy h3 { font-size: 23px; }
+  .original-story-copy p { font-size: 12px; }
+  .original-story-traits { gap: 4px; }
+  .original-story-traits > span { padding: 7px; font-size: 10px; }
+}
+@media (max-width: 600px) {
+  .original-story { padding: 47px 24px 22px; }
+  .original-story-heading { font-size: clamp(29px, 7.6vw, 42px); line-height: 1.11; }
+  .original-story-steps { grid-template-columns: 1fr; gap: 0; margin-top: 29px; }
+  .original-story-steps > li {
+    display: grid;
+    grid-template-columns: 77px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    padding: 18px 0;
+    border-top: 1px solid #e8eef5;
+  }
+  .original-story-copy { padding: 0; border: 0; }
+  .original-story-copy h3 { font-size: 22px; margin-bottom: 7px; }
+  .original-story-copy p { max-width: 340px; font-size: 12px; line-height: 1.5; }
+  .original-story-visual { height: 64px; width: 77px; margin: 0; }
+  .original-story-traits { flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px; }
+  .original-story-traits > span { padding: 7px 8px; font-size: 9px; }
+  .original-story-cv { justify-content: center; }
+  .original-story-paper { margin: 0 8px 0 0; }
+  .original-story-chat > span { padding: 7px 9px; font-size: 10px; }
+}
+@media (max-width: 360px) {
+  .original-story { padding-left: 19px; padding-right: 19px; }
+  .original-story-heading { font-size: 27px; }
+  .original-story-steps > li { grid-template-columns: 66px minmax(0, 1fr); gap: 12px; }
+  .original-story-visual { width: 66px; }
+  .original-story-copy h3 { font-size: 21px; }
+}

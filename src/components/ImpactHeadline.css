@@ -1,0 +1,12 @@
+.impact-headline-word {
+  display: inline-block;
+}
+
+/* Keep text readable immediately, including before Motion reads the preference. */
+@media (prefers-reduced-motion: reduce) {
+  .impact-headline-word {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

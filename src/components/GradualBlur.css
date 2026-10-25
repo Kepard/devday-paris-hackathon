@@ -1,0 +1,40 @@
+.viewport-gradual-blur {
+  --viewport-blur-scale: 1;
+  position: fixed;
+  z-index: 50;
+  left: 0;
+  right: 0;
+  height: clamp(44px, 7svh, 72px);
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  opacity: 1;
+  transition: opacity .25s ease, height .35s ease;
+}
+.viewport-gradual-blur--top { top: 0; }
+.viewport-gradual-blur--bottom { bottom: 0; }
+.viewport-gradual-blur__layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: backdrop-filter .35s ease, -webkit-backdrop-filter .35s ease;
+}
+/* Keep the immersive phone's status bar, navigation and keyboard crisp. */
+.viewport-gradual-blur[data-quiet] {
+  --viewport-blur-scale: .2;
+  height: 40px;
+}
+.viewport-gradual-blur[data-disabled],
+body:has(dialog[open]) .viewport-gradual-blur,
+body:has([role='dialog'][aria-modal='true']) .viewport-gradual-blur {
+  opacity: 0;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .viewport-gradual-blur { display: none; }
+}
+@media (prefers-reduced-transparency: reduce), (forced-colors: active), print {
+  .viewport-gradual-blur { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .viewport-gradual-blur, .viewport-gradual-blur__layer { transition: none; }
+}

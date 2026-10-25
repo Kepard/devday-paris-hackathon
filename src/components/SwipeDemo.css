@@ -1,0 +1,40 @@
+/* The preview uses the same AppUI primitives as the complete experience.
+   Only its stacked deck and standalone navigation need their own layout. */
+.swipe-demo { border-radius: 59px; isolation: isolate; user-select: none; -webkit-user-select: none; outline: none; }
+.swipe-demo:focus-visible { box-shadow: inset 0 0 0 3px #94cbff; }
+.swipe-demo .app-view { top: 114px; padding-top: 0; }
+.swipe-demo .swipe-deck-view { display: flex; flex-direction: column; min-height: 0; }
+.swipe-deck-view > .fe-discovery { flex: 1; min-height: 0; height: auto; }
+.swipe-deck-view .deck-stage { perspective: 900px; }
+.swipe-deck-view .person-card { will-change: transform; transform-origin: 50% 80%; }
+.swipe-deck-view .person-card.behind { pointer-events: none; filter: brightness(.97); }
+.swipe-demo .fe-swipe-stamp { z-index: 1; }
+.swipe-demo .fe-back, .swipe-demo .fe-reset { width: 44px; height: 44px; }
+.swipe-demo .fe-back { left: 17px; }
+.swipe-demo .fe-reset { right: 17px; }
+.swipe-demo .fe-swipe-controls > button:hover:not(:disabled) { transform: scale(1.06); }
+.swipe-demo .fe-swipe-controls > button:active:not(:disabled) { transform: scale(.9); }
+.swipe-demo .deck-complete { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 25px 16px; }
+.swipe-demo .deck-complete p { font-size: 15px; line-height: 1.5; color: #6c829c; }
+.swipe-demo .app-primary { font-size: 17px; min-height: 50px; border-radius: 15px; }
+.swipe-demo .app-text-button { font-size: 15px; min-height: 44px; }
+.swipe-demo .match-view { padding-top: 48px; }
+.swipe-demo .match-view .app-back { top: 5px; }
+.swipe-demo .match-line { font-size: 18px; color: #5e7894; }
+.swipe-demo .shared-interests > span { font-size: 12px; }
+.swipe-demo .chat-view { display: flex; flex-direction: column; padding-top: 0; padding-bottom: 100px; }
+.swipe-demo .chat-header { flex: none; }
+.swipe-demo .chat-messages { flex: 1; min-height: 0; height: auto; }
+.swipe-demo .chat-bubble { font-size: 18px; line-height: 1.38; padding: 12px 15px; border-radius: 20px; }
+.swipe-demo .chat-bubble.them { background: #edf0f5; color: #273b51; border-bottom-left-radius: 6px; }
+.swipe-demo .chat-bubble.you { background: #007aff; border-bottom-right-radius: 6px; }
+.swipe-demo .chat-composer input { font-size: 17px; }
+.swipe-demo .chat-header strong { font-family: 'Cal Sans', sans-serif; font-size: 23px; color: #1b3551; }
+.swipe-demo .chat-header { min-height: 66px; }
+.swipe-demo .chat-status, .swipe-demo .chat-start { font-size: 12px; }
+.swipe-demo .matches-view { padding-top: 10px; }
+.swipe-demo .match-list strong { font-family: 'Cal Sans', sans-serif; font-size: 23px; }
+.swipe-demo .match-list small { font-size: 14px; }
+.swipe-demo .pending-note { font-size: 13px; }
+.swipe-demo .app-toast { font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { .swipe-demo .fe-swipe-controls > button { transition: none; } }

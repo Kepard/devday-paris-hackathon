@@ -1,0 +1,53 @@
+.cv-upload { width:100%; color:#1b2a3d; }
+.cv-upload__stage { position:relative; height:440px; width:100%; isolation:isolate; }
+.cv-upload__drop { position:absolute; top:3px; left:1px; right:1px; height:174px; border:1.5px dashed #c8def5; border-radius:25px; background:linear-gradient(150deg,#f7fbff,#eff7ff); display:grid; place-items:center; transition:border-color .2s,background .2s; overflow:hidden; }
+.cv-upload__drop.is-over { border-color:#007aff; background:#e6f3ff; box-shadow:0 0 0 4px #007aff0b; }
+.cv-upload__drop.has-file { border-style:solid; border-color:#dce9f7; background:#f8fbff; }
+.cv-upload__drop-copy { display:flex; flex-direction:column; align-items:center; gap:7px; }
+.cv-upload__drop-icon { width:43px; height:43px; display:grid; place-items:center; color:#007aff; background:white; border-radius:14px; border:1px solid #e2edf9; margin-bottom:3px; }
+.cv-upload__drop-copy strong { font-size:20px; font-weight:550; letter-spacing:-.4px; }
+.cv-upload__drop-copy>span:last-child { font-size:15px; color:#6e8198; }
+.cv-upload__file { position:absolute; top:216px; left:calc(50% - 80px); width:160px; height:174px; padding:17px 16px 14px; border:1px solid #e2e8ef; border-radius:19px; background:#fff; box-shadow:0 15px 30px #2f4c6f13,0 3px 6px #1b34400a; text-align:left; cursor:grab; z-index:3; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; touch-action:none; }
+.cv-upload__file:active { cursor:grabbing; }
+.cv-upload__file:focus-visible { outline:3px solid #70b5ff; outline-offset:5px; }
+.cv-upload__file-icon { display:flex; gap:7px; align-items:center; margin-bottom:10px; color:#007aff; }
+.cv-upload__file-icon b { font-size:11px; font-weight:650; background:#edf6ff; padding:3px 5px; border-radius:4px; }
+.cv-upload__file>strong { display:block; font-size:17px; font-weight:560; letter-spacing:-.3px; max-width:127px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-bottom:10px; }
+.cv-upload__file>i { display:block; width:122px; height:4px; border-radius:3px; background:#e9eff6; margin:5px 0; }
+.cv-upload__file>i:nth-of-type(2) { width:102px; }
+.cv-upload__file>i:nth-of-type(3) { width:114px; }
+.cv-upload__file-foot { display:block; margin-top:10px; font-size:11px; letter-spacing:0; color:#7e8da0; }
+.cv-upload__drag-hint { position:absolute; top:413px; left:0; right:0; display:flex; align-items:center; justify-content:center; gap:7px; color:#607b9c; font-size:17px; }
+.cv-upload__attached { display:flex; align-items:center; gap:12px; width:calc(100% - 26px); padding:17px 13px; border:1px solid #e3eaf4; border-radius:15px; background:#fff; box-shadow:0 7px 20px #315e8310; }
+.cv-upload__attached>span { display:grid; place-items:center; width:36px; height:42px; border-radius:10px; color:#007aff; background:#eef6ff; flex-shrink:0; }
+.cv-upload__attached>div { min-width:0; flex:1; }
+.cv-upload__attached strong { display:block; font-size:17px; font-weight:550; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.cv-upload__attached small { display:block; color:#7b8ca1; font-size:14px; margin-top:6px; }
+.cv-upload__attached-check { color:#007aff; flex-shrink:0; }
+.cv-upload__scan { position:absolute; left:20px; right:20px; top:calc(50% - 1px); height:2px; background:linear-gradient(90deg,transparent,#007aff,transparent); transform-origin:left; box-shadow:0 0 25px 7px #007aff19; }
+.cv-upload__send { position:absolute; top:231px; left:0; right:0; display:flex; align-items:center; flex-direction:column; }
+.cv-upload__instruction { font-size:17px; font-weight:500; color:#315273; text-align:center; margin:60px 0 0!important; line-height:1.3; }
+.cv-upload__instruction.is-hint { color:#007aff; }
+.cv-upload__instruction,.cv-upload__send-note { transition:opacity .2s ease; }
+.cv-upload__send:has(.cv-sling__pad[data-held]) .cv-upload__instruction,.cv-upload__send:has(.cv-sling__pad[data-held]) .cv-upload__send-note { opacity:.2; }
+.cv-upload__send-note { font-size:14px; line-height:1.5; color:#778ba2; margin-top:7px; }
+.cv-upload__privacy { font-size:12px; color:#8a9bad; line-height:1.4; text-align:center; margin:8px 0 0!important; }
+.cv-upload__result { position:absolute; inset:12px 0 0; display:flex; align-items:center; flex-direction:column; justify-content:center; padding-bottom:28px; background:#fff; z-index:5; }
+.cv-upload__success { width:61px; height:61px; display:grid; place-items:center; border-radius:22px; background:#edf6ff; color:#007aff; margin-bottom:19px; }
+.cv-upload__result>strong { color:#20344e; font-size:27px; letter-spacing:-.9px; font-weight:550; }
+.cv-upload__result>p { color:#71869f; font-size:15px; margin:9px 0 0!important; }
+.cv-upload__skills { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; margin-top:25px; max-width:280px; }
+.cv-upload__skills>span { display:flex; align-items:center; gap:5px; font-size:14px; line-height:1.4; padding:9px 11px; border-radius:9px; border:1px solid #dbebfc; color:#1675d7; background:#f3f9ff; }
+.cv-sling { position:relative; display:block; width:64px; height:64px; }
+.cv-sling__fx { position:absolute; width:116px; height:116px; top:-26px; left:-26px; overflow:visible; pointer-events:none; }
+.cv-sling__well { fill:#e5f1ff; }
+.cv-sling__band { stroke:#72b6fc; stroke-width:3px; fill:none; stroke-linecap:round; }
+.cv-sling__arc { stroke:#007aff; stroke-width:3px; fill:none; stroke-linecap:round; }
+.cv-sling__move { position:absolute; inset:0; }
+.cv-sling__pad { position:relative; display:grid; place-items:center; width:64px; height:64px; background:linear-gradient(145deg,#2595ff,#007aff 70%); color:#fff; border-radius:50%; border:1px solid #fff4; box-shadow:0 7px 18px #007aff25,inset 0 1px 0 #ffffff47; padding:0; cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+.cv-sling__pad[data-held] { cursor:grabbing; }
+.cv-sling__pad:focus-visible { outline:3px solid #7cbaff; outline-offset:7px; }
+.cv-sling__icon { display:flex; }
+.cv-sling__ready { position:absolute; top:-35px; left:-70px; right:-70px; color:#007aff; font-size:15px; text-align:center; pointer-events:none; }
+.cv-sling-sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+@media(prefers-reduced-motion:reduce) { .cv-upload__drop { transition:none; } }
